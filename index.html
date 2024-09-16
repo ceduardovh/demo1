@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Solicitudes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos para el menú lateral */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Estilos del contenedor principal */
+        .main-content {
+            margin-left: 250px; /* El ancho del menú lateral */
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Estilos para el estatus */
+        .status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .status .circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .circle.green {
+            background-color: green;
+        }
+
+        .circle.red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú lateral -->
+    <div class="sidebar">
+        <a href="index.html">Solicitudes</a>
+        <a href="seguimiento.html">Seguimiento</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="#">Validación</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <h1>Gestión de Solicitudes</h1>
+
+        <!-- Tabla de solicitudes -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Estatus</th>
+                    <th>Nombre Cliente</th>
+                    <th>Fecha Envío</th>
+                    <th>Responsable</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="status"><div class="circle green"></div> Enviado</td>
+                    <td>Muñeca</td>
+                    <td>18 Agosto</td>
+                    <td>Renato Rosell</td>
+                </tr>
+                <tr>
+                    <td class="status"><div class="circle green"></div> Enviado</td>
+                    <td>Telcel</td>
+                    <td>18 Agosto</td>
+                    <td>Lene Villanegas</td>
+                </tr>
+                <tr>
+                    <td class="status"><div class="circle red"></div> Sin atender</td>
+                    <td>Al Tamura</td>
+                    <td>17 Agosto</td>
+                    <td>Iván Ortega</td>
+                </tr>
+                <tr>
+                    <td class="status"><div class="circle red"></div> Sin atender</td>
+                    <td>Offermart</td>
+                    <td>17 Agosto</td>
+                    <td>Paula Rodell</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

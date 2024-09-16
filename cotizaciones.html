@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Solicitud</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-section input, .form-section select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .cotizaciones-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .cotizaciones-table th, .cotizaciones-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        .cotizaciones-table th {
+            background-color: #f2f2f2;
+        }
+
+        .totales-section {
+            margin-top: 20px;
+            background-color: #e0e0e0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .totales-section p {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .totales-section .calculo {
+            font-weight: normal;
+        }
+
+        .button-section {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-section button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .button-section button:hover {
+            background-color: #575757;
+        }
+
+        .button-section .cancel {
+            background-color: #d9534f;
+        }
+
+        .button-section .cancel:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="index.html">Solicitudes</a>
+        <a href="seguimiento.html">Seguimiento</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="#">Validación</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Seguimiento de Solicitud</h1>
+
+        <div class="form-section">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Ingrese el nombre de la empresa">
+
+            <label for="folio">Folio</label>
+            <input type="text" id="folio" name="folio" placeholder="Ingrese el número de folio">
+
+            <label for="fecha">Fecha</label>
+            <input type="date" id="fecha" name="fecha">
+
+            <label for="cliente">Cliente</label>
+            <input type="text" id="cliente" name="cliente" placeholder="Ingrese el nombre del cliente">
+
+            <label for="incoterm">Incoterm</label>
+            <input type="text" id="incoterm" name="incoterm" placeholder="Ingrese el incoterm">
+
+            <label for="origen">Origen</label>
+            <input type="text" id="origen" name="origen" placeholder="Ingrese el origen">
+
+            <label for="destino">Destino</label>
+            <input type="text" id="destino" name="destino" placeholder="Ingrese el destino">
+
+            <label for="peso">Peso</label>
+            <input type="text" id="peso" name="peso" placeholder="Ingrese el peso">
+
+            <label for="moneda">Moneda</label>
+            <input type="text" id="moneda" name="moneda" placeholder="Ingrese la moneda">
+
+            <label for="vendedor">Vendedor</label>
+            <input type="text" id="vendedor" name="vendedor" placeholder="Ingrese el nombre del vendedor">
+
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado">
+                <option value="abierto">Abierto</option>
+                <option value="cerrado">Cerrado</option>
+            </select>
+
+            <label for="autorizado">Autorizado por</label>
+            <input type="text" id="autorizado" name="autorizado" placeholder="Nombre de la persona que autoriza">
+        </div>
+
+        <h2>Cotizaciones</h2>
+        <table class="cotizaciones-table">
+            <thead>
+                <tr>
+                    <th>Proveedor</th>
+                    <th>Costo</th>
+                    <th>Vehículo</th>
+                    <th>Ruta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Proveedor A</td>
+                    <td>$500</td>
+                    <td>Camión</td>
+                    <td>Querétaro - CDMX</td>
+                </tr>
+                <tr>
+                    <td>Proveedor B</td>
+                    <td>$600</td>
+                    <td>Furgoneta</td>
+                    <td>Querétaro - Guadalajara</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totales-section">
+            <p>Cálculo de precio de venta: <span class="calculo">$924.00</span></p>
+            <p>Costo total: <span class="calculo">$431.00</span></p>
+            <p>Utilidad: <span class="calculo">$493.00</span></p>
+            <p>Precio de venta: <span class="calculo">$1,155.00</span></p>
+        </div>
+
+        <div class="button-section">
+            <button type="button">Guardar</button>
+            <button type="button" class="cancel">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>

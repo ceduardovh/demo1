@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Solicitudes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .main-content h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            width: 48%;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #e8eaf6;
+        }
+
+        .notes-container {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .notes-container h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="index.html">Solicitudes</a>
+        <a href="seguimiento.html">Seguimiento</a>
+        <a href="cotizaciones.html">Cotizaciones</a>
+        <a href="#">Validación</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Seguimiento de Solicitudes</h1>
+        
+        <!-- Formulario de seguimiento -->
+        <div class="form-container">
+            <div class="form-group">
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa" value="Performer">
+            </div>
+
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" name="cliente">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha">
+            </div>
+
+            <div class="form-group">
+                <label for="origen">Origen:</label>
+                <input type="text" id="origen" name="origen">
+            </div>
+
+            <div class="form-group">
+                <label for="destino">Destino:</label>
+                <input type="text" id="destino" name="destino">
+            </div>
+
+            <div class="form-group">
+                <label for="estatus">Estatus:</label>
+                <select id="estatus" name="estatus">
+                    <option value="abierto">Abierto</option>
+                    <option value="cerrado">Cerrado</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="incoterm">Incoterm:</label>
+                <input type="text" id="incoterm" name="incoterm">
+            </div>
+
+            <div class="form-group">
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso">
+            </div>
+
+            <div class="form-group">
+                <label for="moneda">Moneda:</label>
+                <input type="text" id="moneda" name="moneda">
+            </div>
+
+            <div class="form-group">
+                <label for="valor">Valor del Servicio:</label>
+                <input type="number" id="valor" name="valor">
+            </div>
+        </div>
+
+        <!-- Sección de cotizaciones -->
+        <div class="section">
+            <h2>Cotizaciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proveedor</th>
+                        <th>Costo</th>
+                        <th>Vehículo</th>
+                        <th>Ruta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Proveedor A</td>
+                        <td>$500</td>
+                        <td>Camión</td>
+                        <td>Ruta 1</td>
+                    </tr>
+                    <tr>
+                        <td>Proveedor B</td>
+                        <td>$700</td>
+                        <td>Camión</td>
+                        <td>Ruta 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Sección de notas -->
+        <div class="section">
+            <h2>Notas</h2>
+            <div class="notes-container">
+                <h3>Notas de seguimiento:</h3>
+                <ul>
+                    <li>Nota 1: El cliente solicitó una revisión adicional del contrato.</li>
+                    <li>Nota 2: Confirmar la disponibilidad del transporte.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
